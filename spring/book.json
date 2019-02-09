@@ -2,17 +2,18 @@
     "variables" : {
         "versionNumber" : "12.1",
         "fullVersionNumber": "12.1.0",
-        "asVersionNumber" :  "WildFly 15.0.1",
-        "asFullVersionNumber" :  "15.0.1.Final",
-        "asName" :  "WildFly",
+        "asVersionNumber" :  "REPLACE ME",
+        "asFullVersionNumber" :  "REPLACE ME",
+        "asName" :  "REPLACE ME",
         "copyrightYear" :  "2019",
         "copyrightHolder" :  "Red Hat, Inc.",
         "javaVersionUrl" : "http://docs.oracle.com/javase/8",
-        "asDocRoot" : "https://docs.jboss.org/author/display/WFLY/Documentation",
-        "archeTypeVersion" : "12.0.0",
-        "targetWildfly" : true,
-        "targetSpring" : false,
+        "asDocRoot" : "REPLACE ME",
+        "archeTypeVersion" : "REPLACE ME",
+        "targetWildfly" : false,
+        "targetSpring" : true,
         "productnaneFull" : "Teiid"
     },
+    "root": "../",
     "plugins": ["collapsible-menu"]
 }
