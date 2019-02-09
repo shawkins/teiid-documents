@@ -2,3 +2,7 @@
 	path = master
 	url = https://github.com/shawkins/teiid-documents
 	branch = master-gh-pages
+[submodule "wildfly"]
+	path = wildfly
+	url = https://github.com/shawkins/teiid-documents
+	branch = wildfly-gh-pages
