@@ -1,0 +1,46 @@
+= SQLAlchemy Integration
+
+link:http://www.sqlalchemy.org/[SQLAlchemy] is an open source SQL toolkit and ORM for Python.  
+
+== Prerequisites
+
+- Have SQLAlchemy installed installed.  Teiid integration was last tested with version 1.1.6. 
+
+- Your Teiid installation should already be setup for link:../admin/Socket_Transports.adoc[ODBC] access.  This allows the built-in support of SQLAlchemy 
+for PostgreSQL to be used.
+
+== Usage
+
+You should be able to use a SQLAlchemy engine for querying.  Reflective import of most table metadata is also supported.
+
+[source,python]
+.*Sample Usage*
+----
+import sqlalchemy
+from sqlalchemy import create_engine, Table, MetaData
+engine = create_engine("postgresql+psycopg2://user:password@host:35432/vdb")
+engine.connect()
+#engine is ready for queries
+result = connection.execute("select * from some_table")
+#reflective table import
+meta = MetaData()
+test = Table('public.test', meta, autoload=True, autoload_with=engine,postgresql_ignore_search_path=True)
+----
+
+== Limitations
+
+Only a subset of the PostgreSQL dialect is supported.  The primary intent is to allow querying through Teiid.  If there are additional features that are needed, please log an enhancement request.
+
+Column metadata will not be available for tables that contain the period '.' character.  Depending upon your needs, you may need import settings that use simple Teiid names and not source schema qualified names.
+
+== Application Support
+
+=== Superset
+
+link:http://airbnb.io/superset/[Superset] is an open source data visualization and dashboard builder.  It uses SQLAlchemy to access relational sources.  
+
+Once you have followed the above instructions, you may access a Teiid VDB by adding a Database under the Sources menu.  
+
+The URL will be of the same form shown in the SQLAlchemy integration: postgresql+psycopg2://user:password@host:35432/vdb    
+
+Basic usage scenarios involving aggregation and all basic types have been tested.  If there are additional features that are needed, please log an enhancement request
