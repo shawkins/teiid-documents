@@ -6,3 +6,7 @@
 	path = wildfly
 	url = https://github.com/shawkins/teiid-documents
 	branch = wildfly-gh-pages
+[submodule "13.0.x"]
+	path = 13.0.x
+	url = https://github.com/shawkins/teiid-documents
+	branch = 13.0.x-gh-pages
