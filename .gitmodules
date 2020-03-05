@@ -10,3 +10,7 @@
 	path = 13.0.x
 	url = https://github.com/shawkins/teiid-documents
 	branch = 13.0.x-gh-pages
+[submodule "7.6-13.0.x"]
+	path = 7.6-13.0.x
+	url = https://github.com/shawkins/teiid-documents
+	branch = 7.6-13.0.x-gh-pages
